@@ -21,6 +21,7 @@ This is a development or(/and) production environment for PHP built in seperate 
  * MariaDB
  * Automated backups
  * Redis
+ * RabbitMQ
 
 ## Documentation
 
