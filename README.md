@@ -4,9 +4,10 @@
 
 This is a development or(/and) production environment for PHP built in seperate docker containers, managed with docker-compose. The basic setup contains a LEMP stack (Linux, Nginx, MySQL and PHP) 
 
-(MySQL is replaced by a MariaDB instance which is technically the same as MySQL, but with extra features and promises too be faster than MySQL)
+On this LEMP Stacklives a symfony 3 apllication
 
 ## What's inside:
+ * Symfony 3
  * Nginx
  * PHP 5.6 and PHP 7.0, both contain:
     * APCu (optional)
