@@ -85,14 +85,6 @@ services:
     restart: always
     networks:
       - development
-  memcached:
-    container_name: memcached
-    image: mittax/lemp-memcached
-    ports:
-      - "11211:11211"
-    restart: always
-    networks:
-      - development
   redis:
     container_name: redis
     image: redis
@@ -103,6 +95,14 @@ services:
     restart: always
     networks:
       - development
+
+  rabbit1:
+    container_name: rabbitmq
+    image: mittax/lemp-rabbitmq
+    hostname: rabbit1
+    environment:
+      - ERLANG_COOKIE=abcdefg
+      
 networks:
   development:
     # Use a custom driver
