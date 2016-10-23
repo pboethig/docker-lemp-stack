@@ -1,6 +1,6 @@
 backup:
   container_name: backup
-  image: kreable/backup
+  image: mittax/lemp-backup
   volumes_from:
     - wwwdata
     - nginx
@@ -12,13 +12,13 @@ backup:
   restart: always
 wwwdata:
   container_name: wwwdata
-  image: kreable/wwwdata
+  image: mittax/lemp-wwwdata
   volumes:
     - ./data/www:/var/www
   restart: always
 nginx:
   container_name: nginx
-  image: kreable/nginx
+  image: mittax/lemp-nginx
   volumes:
     - ./data/config/nginx:/etc/nginx
     - ./data/log/nginx:/var/log/nginx
@@ -28,12 +28,12 @@ nginx:
   volumes_from:
     - wwwdata
   ports:
-    - "80:80"
+    - "8087:80"
     - "443:443"
   restart: always
 php56:
   container_name: php56
-  image: kreable/php56
+  image: mittax/lemp-php56
   environment:
     PHP_ENV: 'development'
     PHP_APCU_ENABLED: 'false'
@@ -54,7 +54,7 @@ php56:
   restart: always
 php70:
   container_name: php70
-  image: kreable/php70
+  image: mittax/lemp-php70
   environment:
     PHP_ENV: 'development'
     PHP_APCU_ENABLED: 'false'
@@ -75,7 +75,7 @@ php70:
   restart: always
 mariadb:
   container_name: mariadb
-  image: kreable/mariadb
+  image: mittax/lemp-mariadb
   volumes:
     - ./data/config/mariadb/my.cnf:/etc/mysql/my.cnf
     - ./data/log/mariadb:/var/log/mysql
@@ -83,24 +83,24 @@ mariadb:
   environment:
     DB_ADMIN_PASS: pass
   ports:
-    - "3306:3306"
+    - "3307:3306"
   restart: always
 memcached:
   container_name: memcached
-  image: kreable/memcached
+  image: mittax/lemp-memcached
   ports:
     - "11211:11211"
   restart: always
 mailcatcher:
   container_name: mailcatcher
-  image: schickling/mailcatcher
+  image: mittax/lemp-mailcatcher
   ports:
     - "1025:1025"
     - "1080:1080"
   restart: always
 redis:
   container_name: redis
-  image: redis
+  image: mittax/lemp-redis
   volumes:
     - ./data/config/redis/redis.conf:/usr/local/etc/redis/redis.conf
   ports:
