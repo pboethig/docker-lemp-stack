@@ -87,14 +87,6 @@ services:
     restart: always
     networks:
       - production
-  memcached:
-    container_name: memcached
-    image: mittax/lemp-memcached
-    ports:
-      - "11211:11211"
-    restart: always
-    networks:
-      - production
   redis:
     container_name: redis
     image: redis

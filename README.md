@@ -11,7 +11,6 @@ This is a development or(/and) production environment for PHP built in seperate 
  * PHP 5.6 and PHP 7.0, both contain:
     * APCu (optional)
     * XDebug (optional)
-    * Mailcatcher (optional)
     * Production/development config (optional)
     * Wkhtmltopdf
     * Wkhtmltoimage
@@ -21,7 +20,7 @@ This is a development or(/and) production environment for PHP built in seperate 
     * ...
  * MariaDB
  * Automated backups
- * Redis / Memcached
+ * Redis
 
 ## Documentation
 
@@ -63,7 +62,6 @@ Useful commands:
 	connect_backup	
 	connect_mailcatcher
 	connect_mariadb
-	connect_memcached
 	connect_nginx
 	connect_php56
 	connect_php70

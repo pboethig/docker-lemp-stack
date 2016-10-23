@@ -8,7 +8,6 @@ COMPOSE_FILE_UP_PRODUCTION = 'compose-up-production.yml'
 CONTAINER_BACKUP = backup
 CONTAINER_MAILCATCHER = mailcatcher
 CONTAINER_MARIADB = mariadb
-CONTAINER_MEMCACHED = memcached
 CONTAINER_NGINX = nginx
 CONTAINER_PHP56 = php56
 CONTAINER_PHP56CLI = php56cli
@@ -66,9 +65,6 @@ connect_mailcatcher:
 
 connect_mariadb: 
 	$(BIN_DOCKER) exec -it $(CONTAINER_MARIADB) bash
-
-connect_memcached:
-	$(BIN_DOCKER) exec -it $(CONTAINER_MEMCACHED) bash
 
 connect_nginx:
 	$(BIN_DOCKER) exec -it $(CONTAINER_NGINX) bash
