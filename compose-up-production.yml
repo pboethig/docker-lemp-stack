@@ -29,9 +29,6 @@ services:
     volumes:
       - ./data/config/nginx:/etc/nginx
       - ./data/log/nginx:/var/log/nginx
-    links:
-      - php56
-      - php70
     volumes_from:
       - wwwdata
     ports:
@@ -55,10 +52,6 @@ services:
       - ./data/log/php56:/var/log/php
     volumes_from:
       - wwwdata
-    links:
-      - mariadb
-      - redis
-      - memcached
     restart: always
     networks:
       - production
@@ -77,10 +70,6 @@ services:
       - ./data/log/php70:/var/log/php
     volumes_from:
       - wwwdata
-    links:
-      - mariadb
-      - redis
-      - memcached
     restart: always
     networks:
       - production
